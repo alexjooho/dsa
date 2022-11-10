@@ -1,5 +1,5 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
 
         # make a dictionary that has keys of values needed to reach the sum, and the index of the original number
         # if a number is in the dictionary, return the index of other number and current number in a list

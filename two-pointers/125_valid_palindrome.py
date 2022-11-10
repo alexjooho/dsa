@@ -45,3 +45,9 @@ class Solution:
 #             or ord("a") <= ord(c) <= ord("z")
 #             or ord("0") <= ord(c) <= ord("9")
 #         )
+
+
+# alternative solution would be to create multiple strings or arrays with non-alphanumeric 
+# characters taken out, and compare them against each other (one will be the first half, other will be
+# the second half but reversed)
+# this would take up more space though
