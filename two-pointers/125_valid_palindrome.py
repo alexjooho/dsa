@@ -17,9 +17,9 @@ class Solution:
                 right = right - 1
             else:
                 return False
-        
+
         return True
-        
+
 # neetcode solution:
 # Creates its own alphnum function using ord()
 # using an inner while loop instead of doing multiple if statements
@@ -47,7 +47,13 @@ class Solution:
 #         )
 
 
-# alternative solution would be to create multiple strings or arrays with non-alphanumeric 
-# characters taken out, and compare them against each other (one will be the first half, other will be
-# the second half but reversed)
-# this would take up more space though
+# alternative solution would be to create a new string with non-alphanumeric characters taken out
+# then compare it with its reverse to see if they are the same
+# but this takes up more memory
+
+# new_str = ""
+
+# for c in s:
+#     if c.isalnum():
+#         new_str += c.lower()
+#     return new_str == new_str[::-1]ß
