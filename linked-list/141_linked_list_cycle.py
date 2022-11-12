@@ -35,3 +35,5 @@ class Solution:
 #             if slow == fast:
 #                 return True
 #         return False
+
+# this solution is better because it has same time complexity O(n) but memory is only O(1)
