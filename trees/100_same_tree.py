@@ -61,8 +61,21 @@ class Solution:
                     return False
             elif p_node.right != q_node.right:
                 return False
+                
+            # could refactor this to make it cleaner
 
         if p_stack == q_stack:
             return True
 
         return False
+        
+# Neetcode recursive solution:
+
+# class Solution:
+#     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+#         if not p and not q:
+#             return True
+#         if p and q and p.val == q.val:
+#             return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+#         else:
+#             return False
