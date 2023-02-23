@@ -17,3 +17,32 @@ class Solution:
             n = n >> 1
 
         return total
+        
+
+# neetcode solution:
+# this is a more "bit-like" solution
+# it basically does the same thing but adds the values by shifting to the left an i
+# number of times to get the place value of that bit
+
+# class Solution:
+#     def reverseBits(self, n: int) -> int:
+#         res = 0
+#         for i in range(32):
+#             bit = (n >> i) & 1
+#             res += (bit << (31 - i))
+#         return res
+
+# another youtube solution (basically same concept but it's a little simplified):
+# this solution keeps adding 1 or 0 to the result and then shifts to the left to increase
+# the place value each time another value is to be added
+
+    # res = 0
+
+    # for i in range(32):
+        
+    #     res = res << 1
+    #     bit = n%2
+    #     res += bit
+    #     n = n >> 1
+
+    # return res
