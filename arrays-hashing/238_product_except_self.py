@@ -25,3 +25,5 @@ class Solution:
             output[i - 1] *= postfix
 
         return output
+    
+    # this is O(n) time complexity (technically 2n) and O(1) space complexity
