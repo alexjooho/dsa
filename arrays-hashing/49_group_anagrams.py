@@ -40,16 +40,16 @@ class Solution:
 # this gets rid of edge case where you want to add to a key that doesn't exist yet
 
 # View on Github
-# class Solution:
-#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-#         ans = collections.defaultdict(list)
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ans = collections.defaultdict(list)
 
-#         for s in strs:
-#             count = [0] * 26
-#             for c in s:
-#                 count[ord(c) - ord("a")] += 1
-#             ans[tuple(count)].append(s)
-#         return ans.values()
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            ans[tuple(count)].append(s)
+        return ans.values()
 
 #NOTE: for each string, he created a list and added +1 to each position in list that corresponds
 # to each letter. He then made this list into a tuple so that it is valid as a key in a dictionary
