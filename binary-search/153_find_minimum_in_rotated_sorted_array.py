@@ -21,6 +21,15 @@ class Solution:
                 r = mid
             elif nums[l] < nums[r]:
                 return nums[l]
+            
+            # instead of all this extra logic, can just check if its already sorted without rotation:
+            
+            # if nums[l] < nums[r]:
+            #     return nums[l]
+            # elif nums[l] < nums[mid]:
+            #     l = mid
+            # else:
+            #     r = mid
 
         return min(nums[l], nums[r])
 
