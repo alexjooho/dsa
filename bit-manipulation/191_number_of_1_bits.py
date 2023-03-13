@@ -1,8 +1,6 @@
 class Solution:
     def hammingWeight(self, n: int) -> int:
 
-        # turn integer into string and get the count of 1's in the string
-
         total = 0
         while n: # could also do while n > 0
             total += n & 1
@@ -13,8 +11,6 @@ class Solution:
 # Neetcode solution 1:
 # class Solution:
 #     def hammingWeight(self, n: int) -> int:
-
-#         # turn integer into string and get the count of 1's in the string
 
 #         total = 0
 #         while n: # could also do while n > 0

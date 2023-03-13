@@ -26,16 +26,16 @@ class Solution:
 # starts by making a list with that size so that the list doesn't ever have to grow if it starts with
 # less allocated space than expected
 
-# class Solution:
-#     def countBits(self, n: int) -> List[int]:
-#         dp = [0] * (n + 1)
-#         offset = 1
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        offset = 1
 
-#         for i in range(1, n + 1):
-#             if offset * 2 == i:
-#                 offset = i
-#             dp[i] = 1 + dp[i - offset]
-#         return dp
+        for i in range(1, n + 1):
+            if offset * 2 == i:
+                offset = i
+            dp[i] = 1 + dp[i - offset]
+        return dp
 
 # other solution from youtube comment (better solution)
 # this solution takes advantage of the fact that doing // 2 will basically get rid of the
