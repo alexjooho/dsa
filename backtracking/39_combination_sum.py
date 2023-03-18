@@ -29,7 +29,7 @@ class Solution:
             if i >= len(candidates) or total > target:
                 return
             # need the returns to prevent the recursive function from being called again!
-            
+
             cur.append(candidates[i])
             dfs(i, cur, total + candidates[i])
             # this is the first recursive dfs that can add the same candidate
