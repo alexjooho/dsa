@@ -32,6 +32,7 @@ class Solution:
                 # check rank and update rank
                 par[p1] = p2
                 rank[p2] += rank[p1]
+                # could add another line to update rank of merged node to 1 if we needed to know size of connected components
             
             else:
                 par[p2] = p1
@@ -48,6 +49,8 @@ class Solution:
         return unions
     
 # neetcode solution 2 using a class for union find and hashmap instead of array:
+# this approach just updates the leader for every node and counts how many unique leaders there are to find how many unions there are!
+
 # this solution basically doesn't use the ranking but uses path compression
 # this saves space but uses up more time when doing find
 # instead of subtracting 1 from total unions each time a union is made/added to, it simply
