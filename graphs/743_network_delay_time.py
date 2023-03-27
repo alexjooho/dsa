@@ -36,6 +36,7 @@ class Solution:
         t = 0
 
         while minHeap and len(visit) < n:
+            # similar to bfs but with a priority que
             # the len(visit) < n is so that we don't keep iterating after already seeing all the nodes
             # not necessary, but it optimizes the solution to get rid of excess work
             w1, n1 = heapq.heappop(minHeap)
