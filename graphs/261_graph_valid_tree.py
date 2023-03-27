@@ -10,6 +10,10 @@ class Solution:
     """
     def valid_tree(self, n: int, edges: List[List[int]]) -> bool:
         # O(N + E) time complexity and O(3n) space complexity
+        
+        # TODO: LOOK BELOW, THIS SOLUTION IS INCORRECT FOR CASES WHERE THERE ARE SEPARATE CONNECTED COMPONENTS! 
+            # (e.g. edges = [[0, 1], [0, 2], [3, 4]])
+        # INSTEAD, DO IT LIKE NEETCODE'S SOLUTION WHERE I JUST DO DFS ON ONE NODE AND CHECK FOR CYCLES AND CHECK ALL NODES CONNECTED BY CHECKING VISITED'S LENGTH
 
         # a graph is a valid tree basically if there are no cycles
         # DFS for each node to check that there is no cycle
@@ -30,6 +34,7 @@ class Solution:
         
         visited = set()
         cycle = set()
+        # we wouldn't need another set if we did it like neetcode's solution where we just dfs 0
 
         neighbors = {i : set() for i in range(n)}
 
@@ -58,6 +63,9 @@ class Solution:
             return True
         
         for val in neighbors.values():
+            # TODO: THIS DOESN'T WORK FOR CASES WHERE THERE ARE SEPARATELY CONNECTED COMPONENTS! MY SOLUTION IS WRONG!
+            # could just exclue this part altogether and at end of funcion return True and len(visited) == n
+            
             # this is for the edge case where a node is not connected to the tree
             # instead of having to do this, neetcode's solution simply checks visited set's length to = n
             # this is possible since he doesn't start a dfs for every node in range(n), he simply does it from 0 once
@@ -153,4 +161,9 @@ class Solution:
                 return False
             self.__connect(e1, e2)
 
-        return self.components == 1  # forest contains one tree
+        return self.components == 1  
+        # forest contains one tree (this accounts for edge case where there are 2 separate connected components)
+        # every time a new node is added to tree, that means separate components decreases by 1, so we want
+        # final separate components to just be one singular tree
+        
+        # could also do a visited set and make sure every node has been seen, but that would take up more space

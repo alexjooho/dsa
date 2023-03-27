@@ -28,28 +28,28 @@ class Solution:
     # neetcode solution (this is better because it doesn't use up the O(n) memory):
     # only actually need 2 variables of memory which is O(1)
     
-    # class Solution:
-    # def climbStairs(self, n: int) -> int:
-    #     if n <= 3:
-    #         return n
-    #     n1, n2 = 2, 3
+    class Solution:
+        def climbStairs(self, n: int) -> int:
+            if n <= 3:
+                return n
+            n1, n2 = 2, 3
 
-    #     for i in range(4, n + 1):
-    #         temp = n1 + n2
-    #         n1 = n2
-    #         n2 = temp
-    #     return n2
+            for i in range(4, n + 1):
+                temp = n1 + n2
+                n1 = n2
+                n2 = temp
+            return n2
     
     
     # basically same solution just written differently:
     
-    # class Solution:
-    # def climbStairs(self, n: int) -> int:
-    #     n1, n2 = 1, 1
-    
-    #     for i in range(n-1):
-    #         temp = n1 + n2
-    #         n1 = n2
-    #         n2 = temp
+    class Solution:
+        def climbStairs(self, n: int) -> int:
+            n1, n2 = 1, 1
         
-    #     return n2
+            for i in range(n-1):
+                temp = n1 + n2
+                n1 = n2
+                n2 = temp
+            
+            return n2
