@@ -15,6 +15,8 @@ class Solution:
         # we are basically just always checking whether robbing the current house will give us
         # a greater value than if we didn't rob it.
         
+        # time complexity: O(n), space complexity: O(1)
+        
         n = len(nums)
 
         if n <= 2:
