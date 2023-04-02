@@ -29,10 +29,14 @@ class Solution:
                     r += 1
                 else:
                     break
-            
+
             if total > largest:
                 largest = total
                 res = s[l+1:r]
+                # this technically makes the solution O(n^3) since we have to make a copy of the substring each time
+                # instead, it would've been better to have a res_l and res_r variable that just keeps track of
+                # the indexes, and then at the end we can create the final solution string one time
+                # this will make it a TRUE O(n^2) solution
 
             if s[i+1] == s[i]:
                 # another loop if there are 2 same chars next to each other
@@ -46,13 +50,13 @@ class Solution:
                         r += 1
                     else:
                         break
-                
+
                 if total > largest:
                     largest = total
                     res = s[l+1:r]
 
         return res
-    
+
 # neetcode solution:
 # same concept as my solution
 # instead of using a total, just calculated r - l + 1
