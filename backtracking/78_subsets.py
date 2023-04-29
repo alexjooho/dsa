@@ -7,6 +7,9 @@ class Solution:
             # this way, we will not have any duplicate subsets
         # keep a current array so that we can add to the array, and keep a pointer for which index we are at
         # pop from current after calling function
+        
+        # there will be 2^n number of subsets since for each number, we can either include it or exclude it
+        # time complexity is O(n * 2^n) because there are 2^n subsets and each one could be n long
 
         res = []
 
