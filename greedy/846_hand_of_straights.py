@@ -52,6 +52,10 @@ class Solution:
         return True
 
 # neetcode solution:
+# first makes sure length is divisible by groupsize to see if its possible to be valid
+# uses hashmap to get the count of each number
+# then uses a minheap to always start from the smallest number and check consecutive numbers
+# pop from minheap if the lowest value now has a count of 0
 
 class Solution:
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
@@ -68,9 +72,17 @@ class Solution:
             first = minH[0]
             for i in range(first, first + groupSize):
                 if i not in count:
+                    # if the value is not in the counter, then return false
                     return False
                 count[i] -= 1
+                # decrement that number's count by 1
                 if count[i] == 0:
+                    # if the number's count is now at 0, then check if it is the lowest value
+                    # in minheap
+                    # this is since if it not the lowest value, then that means the lowest value
+                    # will not be able to reach the group size since this number is within that lowest
+                    # value's group and it has a count of 0... so return false
+                    # if this number IS the lowest value, then simply pop it from minheap
                     if i != minH[0]:
                         return False
                     heapq.heappop(minH)
