@@ -29,6 +29,18 @@ class Solution:
 
         # technically instead of 2C, it could be NC if the p portion is really long and fast needs to loop multiple times
         # but math will still work!
+        
+        # Joma Tech explanation/proof (want to prove that x % (mod) L = z)
+        # x = distance from beginning to beginning of cycle
+        # y = distance from beginning of cycle to meeting point
+        # z = distance from meeting point (M) to beginning/end of cycle
+        # L = loop length
+        # turtle distance = x + y, hare distance = 2(x + y)
+        # 2(x + y) = M + k*l  (where k is any number between 1 and infinity for the # of loops)
+        # x = k * l - y
+        # x mod L = (k * l - y) mod L
+        # x % L = L - y = z
+        # this means that the distance from beginning to beginning of cycle and z to beginning of cycle is the same
 
         slow, fast = 0, 0
         while True:
